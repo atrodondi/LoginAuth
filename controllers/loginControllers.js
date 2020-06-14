@@ -9,8 +9,8 @@ module.exports = {
         res.json(dbModel._id);
       })
       .catch(err => {
-        console.log("error: ", err);
-        res.status(422).json(err);
+        console.log("error: ", err.message);
+        res.json(err.message);
       });
   },
 

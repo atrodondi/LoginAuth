@@ -4,14 +4,11 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes");
-const cors = require("cors");
 require("dotenv").config();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// cors
-app.use(cors());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

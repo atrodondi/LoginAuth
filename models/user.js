@@ -44,7 +44,7 @@ userSchema.methods.comparePassword = function (candidatePassword, cb) {
 userSchema.path("email").validate(function (email) {
   var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return emailRegex.test(email);
-}, "Please enter in a proper email address.");
+}, "Please enter in a valid email address.");
 
 // validator that prevents username or email duplicates
 userSchema.plugin(uniqueValidator);

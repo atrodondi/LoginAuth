@@ -32,7 +32,7 @@ export default class Loginpage extends Component {
 
   userLogin = User => {
     API.userLogin(User).then(res => {
-      console.log(res.data);
+      console.log("response from a registered user loggin in:", res.data);
     });
   };
 

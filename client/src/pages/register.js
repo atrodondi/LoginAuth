@@ -42,11 +42,15 @@ export default class Register extends Component {
 
   //   register user function that will be called in the handle form submit function
   registerUser = newUser => {
-    API.registerUser(newUser).then(res => {
-      let UserId = res.data;
-      //   this is where we redirect to a new endpoint using the new userid, or atleast calling a function passing the new id
-      console.log("new user id: ", UserId);
-    });
+    API.registerUser(newUser)
+      .then(res => {
+        let UserId = res.data;
+        //   this is where we redirect to a new endpoint using the new userid, or atleast calling a function passing the new id
+        console.log("response from registering new user: ", UserId);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   //   clearing state values
